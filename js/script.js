@@ -103,3 +103,5 @@ function verifyValidEmail(email) {
 // pegar o email e o password
 // registrar o usuario usando email e password
 
+// apagar a linha 107
+console.log("nova linha de teste do git")
