@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: currentColor;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+    font-family: sans-serif;
+}
+
+input {
+    outline: none;
+}
+
+.form-sign {
+    display: none;
+}
+
+.form-sign.selected {
+    display: block;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 380px;
+    height: 650px;
+    padding: 0px 25px;
+
+    background: linear-gradient(#4631bd, 8%,#4331ac, 48%, #64d8ca);
+}
+
+.title {
+    color: white;
+    margin-bottom: 25px;
+}
+
+#sign-container {
+    background: linear-gradient(#402cb3, 40%, #8bd6cd);
+    padding-top: 10px;
+    box-shadow: 0 0 100px 20px #060644a8;
+    border-radius: .2em;
+}
+
+#sign-container p {
+    color: white;
+    font-weight: bolder;
+    margin: 20px 0;
+}
+
+.info input[type="password"], input[type="email"], input[type="number"], input[type="text"] {
+    border: 1px solid;
+    border-color: #372791d7;
+    padding: 8px;
+    margin: 8px 0px;
+}
+
+.signInButton {
+    grid-area: submit;
+    padding: 10px;
+    background-color: #77d4cb;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    border-radius: .3em;
+    margin-bottom: 55px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.signInButton:hover {
+    cursor: pointer;
+}
+
+.signInButton:active {
+    background-color: #6ac7be;
+    transform: scale(0.9);
+}
+
+.personalInformations {
+    display: grid;
+    grid-template-areas:
+                         "email email "
+                         "password password "
+                         "subInf  subInf"
+                         "submit submit "
+                         "sign sign ";
+    padding: 0px 25px;
+}
+
+.personalInformations input[type="email"] {
+    grid-area: email;
+}
+
+.personalInformations input[type="password"] {
+    grid-area: password;
+}
+
+.personalInformations .subOptionsInformations {
+    grid-area: subInf;
+}
+
+.personalInformations label, a {
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+}
+
+.signIn-and-signUp {
+    grid-area: sign;
+    display: flex;
+}
+
+.sign {
+    font-size: 14px;
+    padding: 10px;
+    width: 50%;
+    font-weight: bolder;
+    border: none;
+    color: white;
+    background: transparent;
+    height: 36px;
+    transition: font .2s ease-in-out;
+}
+
+.sign:hover {
+    font-size: 12px;
+    padding: 10px;
+    border-top: 2px solid white;
+}
+
+.sign.selected {
+    color: #418a8b;
+    font-size: 12px;
+    border-top: 2px solid #306364;
+}
+
+.subOptionsInformations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    margin-top: 5px;
+    margin-bottom: 55px;
+}
+
+.subOptionsInformations a {
+    margin-bottom: 3px;
+}
+
+.subOptionsInformations a:hover {
+    text-decoration: underline;
+}
+
+.boxForLabelCheckbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boxForLabelCheckbox input {
+    display: none;
+}
+
+.boxForLabelCheckbox input + label::before {
+    content: ' ';
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: 1px solid #372791d7;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+.boxForLabelCheckbox input:checked + label::before {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: center;
+    background-color: #294a7a;
+}
+
+.boxForLabelCheckbox input:checked + label {
+    color: #2f4f86;
+}
+
+/* Style signUp */
+
+.registerPersonalInformations {
+    display: grid;
+    grid-template-areas: "login login"
+                         "email email"
+                         "number number"
+                         "password password"
+                         "re-password re-password"
+                         "accept-terms accept-terms"
+                         "sign-in sign-in";
+    padding: 0px 25px;
+}
+
+.registerPersonalInformations input[type="text"] {
+    grid-area: login;
+}
+
+.registerPersonalInformations input[type="email"] {
+    grid-area: email;
+}
+
+.registerPersonalInformations input[type="number"] {
+    grid-area: number;
+}
+
+.registerPersonalInformations .password {
+    grid-area: password;
+}
+
+.registerPersonalInformations .re-password {
+    grid-area: re-password;
+}
+
+.registerPersonalInformations .terms-of-agreement {
+    grid-area: accept-terms;
+}
+
+.registerPersonalInformations .signInButton {
+    grid-area: sign-in;
+}
+
+.terms-of-agreement {
+    display: flex;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.terms-of-agreement label {
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+    /* color: #2f4f86; */
+    margin-left: 8px;
+}
+
+.terms-of-agreement input {
+    display: none;
+}
+
+.terms-of-agreement input + label::before {
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 12px;
+    border: 1px solid #372791d7;
+    background-color: #fff;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    vertical-align: middle;
+}
+
+.terms-of-agreement input:checked + label::before {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+    border-color: #53839e;
+    background-position: center;
+    background-color: #53839e;
+}
+
+.terms-of-agreement input:checked + label {
+    color: #3d6780;
+}
+
+.registerPersonalInformations .signInButton {
+    margin-bottom: 30px;
+}

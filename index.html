@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>js avançado</title>
+
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <header class="title">
+                <h1>Welcome</h1>
+            </header>
+
+            <section id="sign-container">
+                <p>Please enter your personal info</p>
+
+                <div id="form-sign-in" class="form-sign selected">
+                    <form class="personalInformations info">
+                        <input type="email" placeholder="Enter your login or email">
+                        <input type="password" placeholder="Enter the password">
+                        <div class="subOptionsInformations">
+                            <div class="boxForLabelCheckbox">
+                                <input id="remember-me" type="checkbox" name="remember-Me">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                            <a href="">Forgot password?</a>
+                        </div>
+                        <input class="signInButton sign-in" type="button" value="Sign in">
+                    </form>
+                </div>
+                <div id="form-sign-up" class="form-sign">
+                    <form class="registerPersonalInformations info">
+                        <input type="text" placeholder="Enter login">
+                        <input type="email" placeholder="Enter your email">
+                        <input type="number" placeholder="Enter your phone number">
+                        <input class="password" type="password" placeholder="Enter the password">
+                        <input class="re-password" type="password" placeholder="Re enter the password">
+                        <div class="terms-of-agreement">
+                            <input id="accept-the-terms" type="checkbox" name="accept-the-terms">
+                            <label for="accept-the-terms">
+                                I accept the terms of the agreement
+                            </label>
+                        </div>
+                        <input class="signInButton sign-up" type="button" value="Sign in">
+                    </form>
+                </div>
+                <div class="signIn-and-signUp">
+                    <input id="sign-in" class="sign selected" type="button" value="SIGN IN">
+                    <input id="sign-up" class="sign" type="button" value="SIGN UP">
+                </div>
+            </section>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="./js/firebase.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
