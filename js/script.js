@@ -105,4 +105,4 @@ function verifyValidEmail(email) {
 
 // apagar a linha 107
 console.log("nova linha de teste do git")
-console.log("branch test staging")
+console.log("tela de login")
