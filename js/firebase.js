@@ -14,7 +14,21 @@ firebase.firestore().settings({
     merge: true,
 });
 
-const COLLECTION = "users-login";
+const COLLECTION = "users-data-base";
 
 const db = firebase.firestore();
+const auth = firebase.auth();
 
+function registerUserWithEmailAndPassword(email, password) {
+    auth.createUserWithEmailAndPassword(email, password)
+     .then(resolve => {
+      console.log("usuário criado", resolve)
+     })
+     .catch(err => {
+      if(err.message.includes("Password")){
+        alert("Sua senha está muito fraca")
+      } else {
+        alert("Houve algum erro:", err)
+      }
+     })
+}

@@ -58,15 +58,18 @@ buttonsSigns.forEach((button) => {
         // register condition
         else {
             const allRegisterInputs = document.querySelectorAll(".registerPersonalInformations input")
-            
+            let countInputsIsFields = 0
+
             for(let i = 0; i < allRegisterInputs.length; i++) {
-                if(allRegisterInputs[i].value) {
-                    signUserInDatabase()
+                if(!allRegisterInputs[i].value) {
+                    alert("Algum dado está errado")
                     break;
                 }
                 else {
-                    alert("Algum dado está errado")
-                    break;
+                    countInputsIsFields += 1
+                    if(countInputsIsFields == 7) {
+                        signUserInDatabase()
+                    }
                 }
             }
 
@@ -82,8 +85,8 @@ function signUserInDatabase() {
     const equalRegisterPassword = document.querySelector(".re-password").value
 
     if(verifyToEqualPassword(registerPassword, equalRegisterPassword) && verifyValidEmail(registerEmail)) {
+        registerUserWithEmailAndPassword(registerEmail, registerPassword)
         // salvar os dados do usuario no banco de dados
-        // registrar por meio do signIn
     } else {
         alert("Algum dado foi preenchido errado")
     }  
@@ -94,11 +97,8 @@ function verifyToEqualPassword(password, rePassword) {
 }
 
 function verifyValidEmail(email) {
-    // arrumar a condição de email
     return email.includes("@", ".com")
 }
 
 // registrar o usuario no banco de dados
 // acessar os dados do usuario
-// pegar o email e o password
-// registrar o usuario usando email e password
