@@ -33,13 +33,6 @@ function showTheSign(sign) {
     formSignToBeShown.classList.add("selected")
 }
 
-function clearInputsValue() {
-    const inputs = document.querySelectorAll("input[type='email'], input[type='password'], input[type='text'], input[type='number']")
-    inputs.forEach((input) => {
-        input.value = ""
-    })
-}
-
 buttonsSigns.forEach((button) => {
     button.addEventListener("click", () => {
         const signInButton = button.classList.contains("sign-in");
@@ -52,7 +45,7 @@ buttonsSigns.forEach((button) => {
                 alert("Os campos estão vazios")
             }
             else {
-                // checar usuario no banco de dados
+                valueInputLogin.includes("@", ".com") ? checkUserWithEmail(valueInputLogin, valueInputPassword) : checkUserWithLogin(valueInputLogin, valueInputPassword)
             }
         }
         // register condition
@@ -68,7 +61,7 @@ buttonsSigns.forEach((button) => {
                 else {
                     countInputsIsFields += 1
                     if(countInputsIsFields == 7) {
-                        signUserInDatabase()
+                        signUpUserInDatabase()
                     }
                 }
             }
@@ -77,8 +70,8 @@ buttonsSigns.forEach((button) => {
     })
 })
 
-function signUserInDatabase() {
-    const registerUserLogin = document.querySelector(".registerPersonalInformations input[type='text']").value
+function signUpUserInDatabase() {
+    const registerLogin = document.querySelector(".registerPersonalInformations input[type='text']").value
     const registerEmail = document.querySelector(".registerPersonalInformations input[type='email']").value
     const registerPhoneNumber = document.querySelector(".registerPersonalInformations input[type='number']").value
     const registerPassword = document.querySelector(".password").value
@@ -86,7 +79,7 @@ function signUserInDatabase() {
 
     if(verifyToEqualPassword(registerPassword, equalRegisterPassword) && verifyValidEmail(registerEmail)) {
         registerUserWithEmailAndPassword(registerEmail, registerPassword)
-        // salvar os dados do usuario no banco de dados
+        saveUserDataInDataBase(registerLogin,registerEmail,registerPhoneNumber,registerPassword)
     } else {
         alert("Algum dado foi preenchido errado")
     }  
@@ -100,5 +93,11 @@ function verifyValidEmail(email) {
     return email.includes("@", ".com")
 }
 
-// registrar o usuario no banco de dados
+function clearInputsValue() {
+    const inputs = document.querySelectorAll("input[type='email'], input[type='password'], input[type='text'], input[type='number']")
+    inputs.forEach((input) => {
+        input.value = ""
+    })
+}
+
 // acessar os dados do usuario
