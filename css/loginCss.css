@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh 70vh 10vh;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    width: 100vw;
+    height: 100vh;
+}
+
+#head {
+    position: relative;
+    grid-area: header;
+    background: linear-gradient(#402cb3, 60%, #8bd6cd);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "user navegation logout";
+    border-bottom: 2px solid #060644a8;
+}
+
+#head .userInformations {
+    grid-area: user;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#head .userInformations .avatarIcon {
+    width: 50px;
+    border: 1px solid #060644a8;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+#head .userInformations .userName {
+    font-size: 24px;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+#head .menuNavegation {
+    margin: auto;
+}
+
+#head .menuNavegation ul{
+    grid-area: navegation;
+    display: flex;
+    gap: 35px;
+    color: whitesmoke;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+#head .logout {
+    grid-area: logout;
+    text-align: right;
+    margin-right: 40px;
+    font-size: 18px;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.content {
+    grid-area: main;
+}
+
+.moreInformations {
+    grid-area: footer;
+}
+
+/* Implementar os estilos de hover no User, Navegation, Logout */
+/* Centralizar o texto da main */
+/* Estilizar o Footer */
