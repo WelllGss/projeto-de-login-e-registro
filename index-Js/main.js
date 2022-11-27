@@ -34,7 +34,7 @@ buttonsSigns.forEach((button) => {
                 alert("Os campos estão vazios")
             }
             else {
-                valueInputLogin.includes("@", ".com") ? SignIn.checkUserWithEmail(valueInputLogin, valueInputPassword) : alert("Digite um email valido")
+                valueInputLogin.includes("@", ".com") ? SignIn.checkUserWithEmail(valueInputLogin, valueInputPassword) : SignIn.searchUserWithLogin(valueInputLogin, valueInputPassword)
             }
         }
         // register condition
@@ -50,7 +50,7 @@ buttonsSigns.forEach((button) => {
                 else {
                     countInputsIsFields += 1
                     if(countInputsIsFields == 7) {
-                        SignUp.signUpUserInDatabase()
+                        SignUp.registerUserWithEmailAndPassword();
                     }
                 }
             }
