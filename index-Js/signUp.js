@@ -13,7 +13,6 @@ export function registerUserWithEmailAndPassword() {
         firebase.auth.createUserWithEmailAndPassword(email, firstPassword)
          .then(userCredential => {
             let user = userCredential.user;
-            console.log(user);
             uid = user.uid;
             saveUserInDataBase(email, firstPassword);
          })
@@ -35,9 +34,6 @@ function saveUserInDataBase(email, password) {
 
     phoneNumber = phoneNumber.toString()
 
-    console.log(email, password, login, phoneNumber, uid)
-
-
     firebase.db.collection(firebase.COLLECTION).doc(uid).set({
         login: login,
         email: email,
@@ -46,6 +42,7 @@ function saveUserInDataBase(email, password) {
     })
     .then(() => {
         console.log("Usuário salvo com sucesso")
+        location.reload()
     })
     .catch(err => {
         console.log("Houve um erro", err)
