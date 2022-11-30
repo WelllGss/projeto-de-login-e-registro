@@ -33,9 +33,10 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
-    width: 380px;
-    height: 650px;
+    width: 100%;
+    height: 100%;
     padding: 0px 25px;
 
     background: linear-gradient(#4631bd, 8%,#4331ac, 48%, #64d8ca);

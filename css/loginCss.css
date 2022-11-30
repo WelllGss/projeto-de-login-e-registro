@@ -4,80 +4,107 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    outline: 1px solid red;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20vh 70vh 10vh;
+    /* grid-template-rows: 0.5fr 2fr 0.5fr; */
     grid-template-areas: "header"
                          "main"
                          "footer";
-    width: 100vw;
-    height: 100vh;
+    /* width: 100%;
+    height: 100%; */
 }
 
 #head {
     position: relative;
     grid-area: header;
-    background: linear-gradient(#402cb3, 60%, #8bd6cd);
-    display: grid;
+    background: linear-gradient(#4631bd, 8%,#4331ac, 65%, #64d8ca);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "user navegation logout";
     border-bottom: 2px solid #060644a8;
 }
 
 #head .userInformations {
-    grid-area: user;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-left: 20px;
+    justify-content: center;
+    margin: 15px;
+    padding: 5px;
 }
 
 #head .userInformations .avatarIcon {
-    width: 50px;
+    width: 60px;
     border: 1px solid #060644a8;
     border-radius: 50%;
-    margin-right: 15px;
 }
 
 #head .userInformations .userName {
     font-size: 24px;
     color: whitesmoke;
     font-weight: bolder;
+    margin-left: 15px;
 }
 
 #head .menuNavegation {
-    margin: auto;
+    width: 100%;
 }
 
 #head .menuNavegation ul{
-    grid-area: navegation;
     display: flex;
-    gap: 35px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: whitesmoke;
     font-weight: bolder;
     font-size: 18px;
+    padding: 10px;
+}
+
+#head .menuNavegation ul li {
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+#head .menuNavegation ul li:active { 
+    background: linear-gradient(to bottom right,#4331ac, 8%,#4631bd, 60%, #64d8ca);
 }
 
 #head .logout {
-    grid-area: logout;
-    text-align: right;
-    margin-right: 40px;
-    font-size: 18px;
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    font-size: 14px;
     color: whitesmoke;
     font-weight: bolder;
+}
+
+#head .logout:active {
+    text-decoration: underline;
 }
 
 .content {
     grid-area: main;
+    margin: 20px 50px;
+    font-size: 14px;
+    text-align: justify;
 }
 
 .moreInformations {
     grid-area: footer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /* Implementar os estilos de hover no User, Navegation, Logout */
